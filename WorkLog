@@ -1,0 +1,43 @@
+subclipse - http://subclipse.tigris.org/update_1.8.x
+run-jetty-run - http://run-jetty-run.googlecode.com/svn/trunk/updatesite/
+
+link命令:
+ln -s /opt/uploadImage /opt/8080-tomcat-test1/webapps/sekWeb/upload/card
+说明： /opt/uploadImage为图片文件实际存放的路径
+/opt/8080-tomcat-test1/webapps/sekWeb/upload/card  其中card为快捷方式名，是每次新建的。
+
+在catalina.sh文件中，找到cygwin=false，在这一行的前面加入参数，具体如下
+# vi TOMCAT_HOME/bin/catalina.sh
+JAVA_OPTS="-server -Xms800m -Xmx800m -XX:PermSize=256m -XX:MaxPermSize=512m -XX:MaxNewSize=512m"
+
+chattr -R +i /opt/nginx/html/apppackage/  (目录下所有文件加权限）
+chattr -R -i /opt/nginx/html/apppackage/  (目录下所有文件减权限）
+
+打包步骤：
+1、改各项配置参数
+2、mvn eclipse:clean 清理eclipse配置  
+3、mvn clean    清理target输出
+4、mvn eclipse:eclipse   编译eclipse相关配置环境
+5、mvn package    在target中生成war/jar包
+
+SHOW GLOBAL VARIABLES LIKE '%timeout%';
+show variables like '%timeout%';
+SET GLOBAL wait_timeout=345600;
+
+interactive_timeout=345600
+wait_timeout=345600
+
+
+测端口网站：http://tool.chinaz.com/port
+
+
+/opt/nginx/sbin/nginx 启动
+/opt/nginx/sbin/nginx -s reload 平滑重启
+/opt/nginx/sbin/nginx -s stop 结束进程
+
+
+https://github.com/theJian/build-a-hn-front-page (webpack+react学习案例)
+
+
+监控扫描端口的IP：portsentry
+查看链接排行：netstat -na|awk '$5 ~ /[0-9]+:[0-9]+/ {print $5}' |awk -F ":" -- '{print $1}' |sort -n|uniq -c |sort -n|tail -n 1000
