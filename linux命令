@@ -1,4 +1,4 @@
-linux 查看端口使用情况：
+1，linux 查看端口使用情况：
 netstat -antpl
 
 [root@docker ~]# netstat -auntpl
@@ -26,17 +26,21 @@ udp6       0      0 ::1:323                 :::*                                
 监控扫描端口的IP：portsentry
 查看链接排行：netstat -na|awk '$5 ~ /[0-9]+:[0-9]+/ {print $5}' |awk -F ":" -- '{print $1}' |sort -n|uniq -c |sort -n|tail -n 1000
 
+2，建立软连接
 ln -s /opt/uploadImage /opt/8080-tomcat-test1/webapps/sekWeb/upload/card
 说明： /opt/uploadImage为图片文件实际存放的路径
 /opt/8080-tomcat-test1/webapps/sekWeb/upload/card  其中card为快捷方式名，是每次新建的。
 
+3，tomcat内存参数设置
 在catalina.sh文件中，找到cygwin=false，在这一行的前面加入参数，具体如下
 # vi TOMCAT_HOME/bin/catalina.sh
 JAVA_OPTS="-server -Xms800m -Xmx800m -XX:PermSize=256m -XX:MaxPermSize=512m -XX:MaxNewSize=512m"
 
+4，文件夹权限
 chattr -R +i /opt/nginx/html/apppackage/  (目录下所有文件加权限）
 chattr -R -i /opt/nginx/html/apppackage/  (目录下所有文件减权限）
 
+5，nginx启动
 /opt/nginx/sbin/nginx 启动
 /opt/nginx/sbin/nginx -s reload 平滑重启
 /opt/nginx/sbin/nginx -s stop 结束进程
