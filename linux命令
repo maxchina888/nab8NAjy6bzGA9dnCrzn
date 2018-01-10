@@ -1,0 +1,24 @@
+linux 查看端口使用情况：
+netstat -antpl
+
+[root@docker ~]# netstat -auntpl
+Active Internet connections (servers and established)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:111             0.0.0.0:*               LISTEN      1/systemd           
+tcp        0      0 192.168.122.1:53        0.0.0.0:*               LISTEN      1430/dnsmasq        
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      1040/sshd           
+tcp        0      0 127.0.0.1:631           0.0.0.0:*               LISTEN      1035/cupsd          
+tcp        0      0 127.0.0.1:8088          0.0.0.0:*               LISTEN      6213/stunnel        
+tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1285/master         
+tcp        0     52 172.16.2.31:22 服务器端提供服务的端口         172.16.9.50:19905       ESTABLISHED 12569/sshd: root@pt 
+tcp        0      0 172.16.2.31:22          172.16.9.167:53117  客户端连接的IP和端口      ESTABLISHED 13274/sshd: root@pt 
+tcp6       0      0 :::111                  :::*                    LISTEN      1/systemd           
+tcp6       0      0 :::22                   :::*                    LISTEN      1040/sshd           
+tcp6       0      0 ::1:631                 :::*                    LISTEN      1035/cupsd          
+tcp6       0      0 ::1:25                  :::*                    LISTEN      1285/master         
+udp        0      0 192.168.122.1:53        0.0.0.0:*                           1430/dnsmasq        
+udp        0      0 0.0.0.0:67              0.0.0.0:*                           1430/dnsmasq        
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           715/chronyd         
+udp        0      0 0.0.0.0:5353            0.0.0.0:*                           697/avahi-daemon: r 
+udp        0      0 0.0.0.0:55517           0.0.0.0:*                           697/avahi-daemon: r 
+udp6       0      0 ::1:323                 :::*                                715/chronyd  
