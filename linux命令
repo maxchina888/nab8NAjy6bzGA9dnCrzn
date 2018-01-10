@@ -34,7 +34,7 @@ ln -s /opt/uploadImage /opt/8080-tomcat-test1/webapps/sekWeb/upload/card
 3，tomcat内存参数设置
 在catalina.sh文件中，找到cygwin=false，在这一行的前面加入参数，具体如下
 # vi TOMCAT_HOME/bin/catalina.sh
-JAVA_OPTS="-server -Xms800m -Xmx800m -XX:PermSize=256m -XX:MaxPermSize=512m -XX:MaxNewSize=512m"
+JAVA_OPTS="-server -Xms1024m -Xmx2048m -XX:PermSize=256m"
 
 4，文件夹权限
 chattr -R +i /opt/nginx/html/apppackage/  (目录下所有文件加权限）
