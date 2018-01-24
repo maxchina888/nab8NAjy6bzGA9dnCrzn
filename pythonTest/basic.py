@@ -3,7 +3,7 @@ print("你好，世界！");
 
 ## 数据类型
 a, b, c, d, e = 20, 5.5, True, 4+3j, 'Sssss';
-print(type(a), type(b), type(c), type(d), e,end=",");
+print(type(a), type(b), type(c), type(d), type(e),end="\n");
 
 ## 取模(余数)
 print(12%5);

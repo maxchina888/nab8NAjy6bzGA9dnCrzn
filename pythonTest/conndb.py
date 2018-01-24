@@ -19,8 +19,5 @@ for row in results:
       print ("fname=%s,lname=%s" % (fname,fname222))
 # 使用 fetchone() 方法获取单条数据.
 
-
-
-
 # 关闭数据库连接
 conn.close()
