@@ -20,3 +20,7 @@ wait_timeout=345600
 4，常用网页
 测端口网站：http://tool.chinaz.com/port
 https://github.com/theJian/build-a-hn-front-page (webpack+react学习案例)
+
+5，python学习网址
+https://www.w3cschool.cn/python3/python3-tutorial.html
+http://docs.30c.org/djangobook2/chapter01/index.html
