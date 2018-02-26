@@ -2,7 +2,7 @@
 
 import pymysql;
 # 创建连接
-conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='111111', db='usm')
+conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='111111', db='usm',charset='utf8')
 
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor = conn.cursor()
