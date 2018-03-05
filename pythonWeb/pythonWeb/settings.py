@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # app项目配置
     'firstWeb.apps.FirstwebConfig',
 ]
 
@@ -75,12 +76,45 @@ WSGI_APPLICATION = 'pythonWeb.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
+# 检查有没有将app加到settings里面的INSTALLED_APPS里，
+# 执行python manager.py makemigrations 生成migrations文件
+# 然后再执行python manager.py migrate  生成数据库
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'usm',
+        'USER': 'root',
+        'PASSWORD': '111111',
+        'HOST': '',
+        'PORT': '',
     }
 }
+
+# http://blog.csdn.net/foryouslgme/article/details/52154152
+# MySQLdb只支持Python2.，还不支持3.
+# 可以用PyMySQL代替。
+#
+# 安装方法：
+# pip install PyMySQL
+# 然后在需要的项目中，把 init.py中添加两行：
+#
+# import pymysql
+# pymysql.install_as_MySQLdb()
+#
+# 就可以用 import MySQLdb了。其他的方法与MySQLdb一样。
+#
+# django连接mysql时的错误处理
+# 找到mysql连接文件：D:\Program Files (x86)\Python35\Lib\site-packages\django\db\backends\mysql\__init__.py
+# 添加
+# import pymysql
+# pymysql.install_as_MySQLdb()
 
 
 # Password validation
