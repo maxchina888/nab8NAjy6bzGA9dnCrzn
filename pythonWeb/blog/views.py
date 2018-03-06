@@ -1,8 +1,7 @@
 from datetime import datetime
 from django.http import HttpResponse
 from django.shortcuts import render_to_response
-from django.template import loader, Context
-
+from django.template import loader
 from blog.models import BlogPost
 
 def sayhello(request, parm=''):
