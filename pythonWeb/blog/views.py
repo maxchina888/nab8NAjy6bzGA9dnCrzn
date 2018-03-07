@@ -20,7 +20,7 @@ def sayhello(request, parm=''):
     parm += '</html>'
     return HttpResponse(parm)
 
-
+# render_to_response未来可能会被废弃，不建议使用
 def blog(request):
     posts = BlogPost.objects.all().order_by("-timestamp")[:5]
     template = loader.get_template("archive.html")
