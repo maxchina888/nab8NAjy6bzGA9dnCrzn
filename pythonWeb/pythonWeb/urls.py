@@ -21,6 +21,6 @@ from blog.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^sayhello/',sayhello),
-    url(r'^archive/',archive),
-    url(r'^archiveTwo/',archiveTwo),
+    url(r'^blog/',blog),
+    url(r'^create/',create_blogpost),
 ]

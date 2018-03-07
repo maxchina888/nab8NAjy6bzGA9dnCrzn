@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = 'arj$&wpvv*1*31t6vtgcj))=wrnwv7ev4qai)ph6%9q=ww22rl'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -56,8 +54,7 @@ ROOT_URLCONF = 'pythonWeb.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'blog/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,7 +68,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'pythonWeb.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
@@ -135,20 +131,22 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
 
 LANGUAGE_CODE = 'zh-hans'
 
+# TIME_ZONE：用于存放本地时区信息，默认值为UTC，意思为采用国际标准时间“格林尼治时间”。
+# 中国处于东八区，官方文档上有两个取值“Asia/Shanghai”和“Asia/Chongqing”(没有北京).
 TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
-
+# USE_TZ：用于控制是否使用UTC时间(True and False)。如果设置为False，则使用本地时间。
+# 为了保证世界各地时间统一性，可以在数据库中使用UTC时间，根据需求转换成相应时区时间。
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/

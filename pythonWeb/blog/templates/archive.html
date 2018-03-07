@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>博客</title>
+</head>
+<body>
+    <form action="/create/" method="POST">{% csrf_token %}
+        Title:
+        <input type="text" name="title"><br>
+        Body:
+        <textarea name="body" row="3" cols="60"></textarea><br>
+        <input type="submit">
+    </form>
+
+    {% for post in posts %}
+        <h2>{{ post.title }}</h2>
+        <h2>{{ post.timestamp }}</h2>
+        <h2>{{ post.body }}</h2>
+        <hr>
+    {% endfor %}
+</body>
+</html>
